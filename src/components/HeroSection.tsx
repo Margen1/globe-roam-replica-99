@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Search, Globe, Wifi, Shield } from 'lucide-react';
 import { countries } from '../data/countries';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from './ui/tabs';
 
 const HeroSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -72,6 +73,120 @@ const HeroSection = () => {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Special Offers Section */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              Ofertat e Momentit
+            </h2>
+            
+            <Tabs defaultValue="local" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 bg-white shadow-md">
+                <TabsTrigger value="local" className="text-lg font-medium">
+                  Local eSIM
+                </TabsTrigger>
+                <TabsTrigger value="regional" className="text-lg font-medium">
+                  Regional eSIM
+                </TabsTrigger>
+                <TabsTrigger value="global" className="text-lg font-medium">
+                  Global eSIM
+                </TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="local" className="mt-6">
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🇺🇸</span>
+                        <h3 className="font-semibold">USA Local</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">5GB - 30 days</p>
+                      <p className="text-lg font-bold text-blue-600">$25</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🇬🇧</span>
+                        <h3 className="font-semibold">UK Local</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">3GB - 15 days</p>
+                      <p className="text-lg font-bold text-blue-600">$18</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🇫🇷</span>
+                        <h3 className="font-semibold">France Local</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">2GB - 14 days</p>
+                      <p className="text-lg font-bold text-blue-600">$15</p>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="regional" className="mt-6">
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🇪🇺</span>
+                        <h3 className="font-semibold">Europe Regional</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">10GB - 30 days</p>
+                      <p className="text-lg font-bold text-blue-600">$45</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🌏</span>
+                        <h3 className="font-semibold">Asia Regional</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">5GB - 21 days</p>
+                      <p className="text-lg font-bold text-blue-600">$35</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🌎</span>
+                        <h3 className="font-semibold">Americas Regional</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">8GB - 28 days</p>
+                      <p className="text-lg font-bold text-blue-600">$40</p>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="global" className="mt-6">
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🌍</span>
+                        <h3 className="font-semibold">Global Starter</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">1GB - 7 days</p>
+                      <p className="text-lg font-bold text-blue-600">$12</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🌍</span>
+                        <h3 className="font-semibold">Global Traveler</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">5GB - 30 days</p>
+                      <p className="text-lg font-bold text-blue-600">$55</p>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div className="flex items-center mb-2">
+                        <span className="text-2xl mr-2">🌍</span>
+                        <h3 className="font-semibold">Global Pro</h3>
+                      </div>
+                      <p className="text-sm text-gray-600 mb-2">15GB - 60 days</p>
+                      <p className="text-lg font-bold text-blue-600">$99</p>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
 
           {/* Features */}
